@@ -10,6 +10,9 @@ JLA dataset and covariance matrices used in this analysis
 can be downloaded from
 http://cdsarc.u-strasbg.fr/viz-bin/qcat?J/A+A/568/A22
 and http://supernovae.in2p3.fr/sdss_snls_jla/covmat_v6.tgz.
+Note covariances used in this code have been converted from
+FITS format to .npy format and can be downloaded from
+https://doi.org/10.5281/zenodo.831360
 
 Dataset used in analysis computes redshifts in CMB frame
 from JLA heliocentric redshifts. Running 'python build.py' 
