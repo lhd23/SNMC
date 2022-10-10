@@ -2,13 +2,15 @@ import sys
 import numpy as np
 from scipy import integrate,optimize
 
+# Updated 07/10/2022 to fix a bug in the code that was affecting the
+# distance moduli of a single data point (thanks to Zac Lane)
 
 class flrw:
     
     def __init__(self, om0, oml, H0=66.7):
         self.om0 = om0
         self.oml = oml
-        self.c = 2.9979e5
+        self.c = 2.99792458e5
         self.dH = self.c/H0
 
     @property
@@ -189,10 +191,7 @@ if __name__ == '__main__':
         for k in range(N):
             ts = timescape(Om,H0=61.7)
             zz = zcmb[k]
-            interp[k,i] = ts.dL(zz)         
-        else:
-            iarr = np.vstack((iarr, [k,i]))
-            interp[k,i] = 10000.
-                    
+            interp[k,i] = ts.dL(zz)
+
     np.save('tabledL_ts.npy',interp)
     # np.savetxt('rejected.txt',iarr,fmt='%3i')

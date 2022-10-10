@@ -3,6 +3,9 @@
 Dam, Heinesen, Wiltshire (2017) arxiv:1706.07236
 ========================================================
 
+07/10/2022: fixes a bug in distmod.py that was affecting the
+distance moduli of a single data point (thanks to Zac Lane)
+
 This code requires the Multinest module (arXiv:0809.3437) 
 and the Python interface PyMultinest to be installed
 
