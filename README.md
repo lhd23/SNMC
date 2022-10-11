@@ -5,14 +5,15 @@ This is the analysis code used in the paper Dam, Heinesen, and Wiltshire,
 [[arxiv](https://arxiv.org/abs/1706.07236)].
 
 ## Update
-07/10/2022: fixes a bug in `distmod.py` that was affecting the
-distance moduli of a single data point (thanks to Zac Lane)
 
+07/10/2022: fixes a bug in `distmod.py` that was affecting the
+distance moduli of a single data point (thanks to Zac Lane).
 
 ## Dependencies and data requirements
-This code requires [numpy](https://numpy.org/), [scipy](https://www.scipy.org/),
-and [PyMultinest](https://github.com/JohannesBuchner/PyMultiNest),
-(a Python interface of [Multinest](https://arxiv.org/abs/0809.3437)).
+
+This code requires [NumPy](https://numpy.org/), [SciPy](https://www.scipy.org/),
+and [PyMultiNest](https://github.com/JohannesBuchner/PyMultiNest) 
+(a Python interface of [MultiNest](https://arxiv.org/abs/0809.3437)).
 
 The JLA dataset and covariance matrices used in this analysis 
 are not supplied here; they can be downloaded from
@@ -25,9 +26,9 @@ Please cite the respective papers if these products are used in published work.
 
 ## Running the code
 
-Dataset used in analysis computes redshifts in CMB frame
+The dataset used in the analysis computes redshifts in the CMB frame
 from JLA heliocentric redshifts. Running `python build.py`
-generates the data file jla.tsv used in this analysis
+generates the data file `jla.tsv` used in this analysis
 ordered as follows
 
 ```
@@ -35,8 +36,8 @@ zcmb, mb, x1, c, logMass, survey id, zhel, RA, DEC
 ```
 
 Next, for fast likelihood evaluation, run `python distmod.py`
-to produce a look up table of luminosity distances for each
-snia and for different cosmological parameter(s).
+to produce a look-up table of luminosity distances for each
+SNIa and for different cosmological parameter(s).
 
 Running the main script `snsample.py` computes the evidence 
 for the model specified by the following command line options:
